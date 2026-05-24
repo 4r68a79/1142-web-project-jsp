@@ -1,0 +1,90 @@
+<div id="header">
+    <div id="header-inner">
+        <div id="logo">
+            <a href="index.jsp#home-back"><img src="images/logo.png" /></a>
+        </div>
+        <ul id="header-nav">
+            <li><a href="about.html"><img src="images/about.png" /></a></li>
+            <li><a href="contact.html"><img src="images/contact.png" /></a></li>
+            <li><a href="sitemap.html"><img src="images/sitemap.png" /></a></li>
+            <li><a href="#" id="custom-dark-btn" style="color: #FFF; font-size: 12px; line-height: 20px;">🌓 Dark</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="nav">
+    <ul> 
+        <li class="color-blue">
+            <div class="main" id="north">北部景點</div>
+            <ul class="subs"> 
+                <li><a href="index.jsp?page=jiufen">九份老街</a></li> 
+                <li><a href="index.jsp?page=danshui">淡水漁人碼頭</a></li> 
+                <li><a href="index.jsp?page=yangmingshan">陽明山國家公園</a></li> 
+                <li><a href="index.jsp?page=pingxi">平溪天燈</a></li>
+            </ul> 
+        </li> 
+        <li class="color-red">
+            <div class="main" id="center">中部景點</div>
+            <ul class="subs"> 
+                <li><a href="index.jsp?page=sunmoonlake">日月潭</a></li> 
+                <li><a href="index.jsp?page=cingjing">清境農場</a></li> 
+                <li><a href="index.jsp?page=hehuanshan">合歡山</a></li> 
+                <li><a href="index.jsp?page=rainbow">彩虹眷村</a></li> 
+            </ul> 
+        </li>
+        <li class="color-yellow">
+            <div class="main" id="south">南部景點</div>
+            <ul class="subs"> 
+                <li><a href="index.jsp?page=kenting">墾丁國家公園</a></li> 
+                <li><a href="index.jsp?page=pier2">駁二藝術特區</a></li> 
+                <li><a href="index.jsp?page=cijin">旗津燈塔</a></li> 
+            </ul> 
+        </li>
+        <li class="color-green">
+            <div class="main" id="east">東部景點</div>
+            <ul class="subs"> 
+                <li><a href="index.jsp?page=taroko">太魯閣峽谷</a></li> 
+                <li><a href="index.jsp?page=qixingtan">七星潭</a></li> 
+                <li><a href="index.jsp?page=brown">伯朗大道</a></li> 
+            </ul> 
+        </li> 
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        // ======== 1. 回首頁收合動畫（保留） ========
+        if (window.location.hash === "#home-back") {
+            history.replaceState(null, document.title, window.location.pathname);
+            $("ul.subs:visible").slideUp(500);
+            setTimeout(function() {
+                $("div.main").removeClass("open");
+                sessionStorage.removeItem("openMenu");
+            }, 500); 
+        }
+
+        // ======== 2. 絕對不會失敗的原生暗黑切換 ========
+        // 讀取記憶：如果以前設定過暗黑，就加上 class
+        if (localStorage.getItem("theme") === "dark") {
+            $("body").addClass("dark-theme");
+            $("#custom-dark-btn").text("☀️ Light");
+        }
+
+        // 點擊切換事件
+        $("#custom-dark-btn").on("click", function(e) {
+            e.preventDefault(); 
+            
+            // 啪一聲！直接在 body 身上切換 dark-theme 類別
+            $("body").toggleClass("dark-theme");
+            
+            // 同步文字與寫入記憶
+            if ($("body").hasClass("dark-theme")) {
+                $(this).text("☀️ Light");
+                localStorage.setItem("theme", "dark");
+            } else {
+                $(this).text("🌓 Dark");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+</script>
