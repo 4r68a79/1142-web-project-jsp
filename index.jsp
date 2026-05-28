@@ -20,21 +20,38 @@
                     // 3. 讀取並展開當前被記憶的選單狀態
                     var menuId = sessionStorage.getItem("openMenu");
                     if (menuId) {
+                        if (localStorage.getItem("theme") === "dark"){
+                        $("#" + menuId).next("ul.subs").show();
+                        $("#" + menuId).addClass("open2");
+                        }else{
                         $("#" + menuId).next("ul.subs").show();
                         $("#" + menuId).addClass("open");
+                        }
                     }
                     
                     // 4. 綁定選單點擊展開/縮合事件
                     $("div.main").click(function(){
                         var $nextUl = $(this).next("ul");
                         var isVisible = $nextUl.is(":visible");
-                        
+                        if (localStorage.getItem("theme") === "dark"){
+                        $("ul.subs").slideUp();
+                        $("div.main").removeClass("open2");
+                    
+                        }
+                        else{
                         $("ul.subs").slideUp();
                         $("div.main").removeClass("open");
-                        
+                        }
                         if(!isVisible){
                             $nextUl.slideDown();
+                           // $(this).addClass("open");
+                        if (localStorage.getItem("theme") === "dark"){
+                            $(this).addClass("open2");
+                    
+                        }
+                        else{
                             $(this).addClass("open");
+                        }
                             var menuId = $(this).attr("id");
                             sessionStorage.setItem("openMenu", menuId);
                         } else {
