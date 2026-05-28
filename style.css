@@ -184,19 +184,19 @@ li.color-green div.open {
 /* ------- sub menu open(dark) ------- */
 
 li.color-blue div.open2 {
-	background:url("images/arrow.png") no-repeat #0D9BE5 28px bottom;
+	background:url("images/arrow2.png") no-repeat #0D9BE5 28px bottom;
 }
 
 li.color-red div.open2 {
-	background:url("images/arrow.png") no-repeat #FD2621 28px bottom;
+	background:url("images/arrow2.png") no-repeat #FD2621 28px bottom;
 }
 
 li.color-yellow div.open2 {
-	background:url("images/arrow.png") no-repeat #FF8D00 28px bottom;
+	background:url("images/arrow2.png") no-repeat #FF8D00 28px bottom;
 }
 
 li.color-green div.open2 {
-	background:url("images/arrow.png") no-repeat #15B59B 28px bottom;
+	background:url("images/arrow2.png") no-repeat #15B59B 28px bottom;
 }
 
 /* ------- mouseover ------- */
