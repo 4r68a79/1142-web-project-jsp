@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 /* ------- base ------- */
 body{
@@ -164,7 +164,7 @@ li.color-green ul.subs li a:hover {
 	color: #FFF;
 }
 
-/* ------- sub menu open ------- */
+/* ------- sub menu open(white) ------- */
 li.color-blue div.open {
 	background:url("images/arrow.png") no-repeat #0D9BE5 28px bottom;
 }
@@ -178,6 +178,24 @@ li.color-yellow div.open {
 }
 
 li.color-green div.open {
+	background:url("images/arrow.png") no-repeat #15B59B 28px bottom;
+}
+
+/* ------- sub menu open(dark) ------- */
+
+li.color-blue div.open2 {
+	background:url("images/arrow.png") no-repeat #0D9BE5 28px bottom;
+}
+
+li.color-red div.open2 {
+	background:url("images/arrow.png") no-repeat #FD2621 28px bottom;
+}
+
+li.color-yellow div.open2 {
+	background:url("images/arrow.png") no-repeat #FF8D00 28px bottom;
+}
+
+li.color-green div.open2 {
 	background:url("images/arrow.png") no-repeat #15B59B 28px bottom;
 }
 
